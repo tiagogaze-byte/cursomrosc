@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Navy & Gold Theme */
+    --navy-900: 212 100% 12%;
+    --navy-800: 212 100% 18%;
+    --gold-classic: 43 76% 52%;
+    --gold-light: 43 78% 75%;
+    --bege-class: 60 56% 91%;
+
+    --background: 0 0% 98%;
+    --foreground: 212 100% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 212 100% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 212 100% 12%;
+
+    --primary: 212 100% 12%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 43 76% 52%;
+    --secondary-foreground: 212 100% 12%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 43 76% 52%;
+    --accent-foreground: 212 100% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 43 76% 52%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 212 100% 18%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 43 76% 52%;
+    --sidebar-primary-foreground: 212 100% 12%;
+    --sidebar-accent: 212 100% 15%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 212 100% 20%;
+    --sidebar-ring: 43 76% 52%;
+  }
+
+  .dark {
+    --navy-900: 212 100% 12%;
+    --navy-800: 212 100% 18%;
+    --gold-classic: 43 76% 52%;
+    --gold-light: 43 78% 75%;
+
+    --background: 212 100% 12%;
+    --foreground: 0 0% 98%;
+
+    --card: 212 100% 15%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 212 100% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 43 76% 52%;
+    --primary-foreground: 212 100% 12%;
+
+    --secondary: 212 100% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 212 100% 18%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 43 76% 52%;
+    --accent-foreground: 212 100% 12%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 212 100% 20%;
+    --input: 212 100% 20%;
+    --ring: 43 76% 52%;
+
+    --sidebar-background: 212 100% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 43 76% 52%;
+    --sidebar-primary-foreground: 212 100% 12%;
+    --sidebar-accent: 212 100% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 212 100% 15%;
+    --sidebar-ring: 43 76% 52%;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--navy-900));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--gold-classic));
+  border-radius: 4px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--gold-classic) / 0.1) 0%,
+    hsl(var(--gold-classic) / 0.3) 50%,
+    hsl(var(--gold-classic) / 0.1) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
